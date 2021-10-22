@@ -11,8 +11,7 @@ from django.template import loader
 
 @login_required(login_url="/login/")
 def index(request):
-    context = {}
-    context['segment'] = 'index'
+    context = {'segment': 'index'}
 
     html_template = loader.get_template('index.html')
     return HttpResponse(html_template.render(context, request))
